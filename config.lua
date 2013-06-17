@@ -108,6 +108,7 @@ myawesomemenu = {
 }
 
 mycommons = {
+	{ "Steam", "steam", 				icons_path .. "steam.png"},
 	{ "Terminal", "terminator", 		icons_path .. "terminal.png"},
 	{ "Pidgin IM", "pidgin", 			icons_path .. "pidgin.png"},
 	{ "Skype", "skype", 				icons_path .. "skype.png"},
@@ -125,8 +126,8 @@ internet = {
 	{"Thunderbird", "thunderbird",	icons_path .. "thunderbird.png"},
 	{"Evolution", "evolution",		icons_path .. "evolution.png"},
 	{"TeamViewer", "teamviewer7", 	icons_path .. "teamviewer.png"},
---	{"Linux DC++", "linuxdcpp", 	icons_path .. "linuxdcpp.png"},
-	{"EiskaltDC++", "eiskaltdcpp-gtk", icons_path .. "eiskaltdcpp.png"},
+	{"Linux DC++", "linuxdcpp", 	icons_path .. "linuxdcpp.png"},
+--	{"EiskaltDC++", "eiskaltdcpp-gtk", icons_path .. "eiskaltdcpp.png"},
 	{"QBittorrent", "qbittorrent", 	icons_path .. "qbittorrent.png"},
 	{"FileZilla", "filezilla", 		icons_path .. "filezilla.png"},
 	{"Wireshark", "gksu wireshark", icons_path .. "wireshark.png"},
@@ -171,8 +172,8 @@ mymainmenu = awful.menu({
 		{ "code",			code, icons_path .. "code.png"},
 		{ "tools", 			tools, icons_path .. "settings.png"},
 		{ "media", 			media, icons_path .. "media.png"},
-		{ "file manager", 	"nemo", icons_path .. "nautilus.png"},
-		{ "editor", 		"juffed", icons_path .. "gedit.png"}
+		{ "file manager", 	"nautilus", icons_path .. "nautilus.png"},
+		{ "editor", 		"gedit", icons_path .. "gedit.png"}
 	}
 })
 
