@@ -135,8 +135,9 @@ internet = {
 }
 
 code = {
-	{"NetBeans", "netbeans_start", 		icons_path .. "netbeans.png"},
-	{"Eclipse", "/opt/eclipse/eclipse",	icons_path .. "eclipse.png"},
+	{"NetBeans", "netbeans_start",          icons_path .. "netbeans.png"},
+	{"Eclipse", "/opt/eclipse/eclipse",		icons_path .. "eclipse.png"},
+--	{"Oracle SQL Developer", "oracle-sqldeveloper", icons_path .. "sqldeveloper.png"},
 	{"QtCreator", "qtcreator", 			icons_path .. "qtcreator.png"},
 	{"Anjuta", "anjuta", 				icons_path .. "anjuta.png"},
 	{"GitG", "gitg", 					icons_path .. "git.png"},
@@ -188,6 +189,32 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Separator Widget
 separator = wibox.widget.textbox()
 separator:set_text(" | ")
+
+--------------------------------------------------------------------------------
+-- CPU MEM and CORES graphs
+cpulabel = wibox.widget.textbox()
+cpulabel:set_text("cpu")
+
+cpu_graph = blingbling.line_graph({ height = 18,
+                                        width = 100,
+                                        show_text = true,
+                                        label = "$percent %",
+                                        rounded_size = 0.3,
+                                        graph_background_color = "#00000033"
+                                      })
+vicious.register(cpu_graph, vicious.widgets.cpu, '$1', 4)
+
+memlabel = wibox.widget.textbox()
+memlabel:set_text("mem")
+mem_graph = blingbling.line_graph({ height = 18,
+                                        width = 80,
+                                        show_text = true,
+                                        label = "$percent %",
+                                        rounded_size = 0.3,
+                                        graph_background_color = "#00000033"
+                                      })
+vicious.register(mem_graph, vicious.widgets.mem,'$1')
+
 --------------------------------------------------------------------------------
 -- Keyboard map indicator and changer
 kbdcfg = {}
@@ -212,33 +239,6 @@ kbdcfg.widget:buttons(
 mytextclock = awful.widget.textclock()
 calendar = require('calendar')
 calendar.addCalendarToWidget(mytextclock, "<span color='red'>%s</span>")
-
---------------------------------------------------------------------------------
---CPU usage widget
-cpuwidget = awful.widget.graph()
-cpuwidget:set_width(30)
---cpuwidget:set_background_color("#494B4F")
-cpuwidget:set_background_color("#000000")
---cpuwidget:set_color("#FF5656")
-cpuwidget:set_color("#FF0000")
---cpuwidget:set_gradient_colors({ "#FF5656", "#88A175", "#AECF96" })
-vicious.register(cpuwidget, vicious.widgets.cpu, "$1", 3)
-
---------------------------------------------------------------------------------
--- gmail widget and tooltip
-mygmail = wibox.widget.textbox()
-gmail_t = awful.tooltip({ objects = { mygmail },})
-mygmailimg = wibox.widget.imagebox()
-mygmailimg:set_image(icons_path .. "Gmail_Icon.png")
-
-vicious.register(mygmail,
-				vicious.widgets.gmail,
-				function (widget, args)
-					gmail_t:set_text(args["{subject}"])
-					gmail_t:add_to_object(mygmailimg)
-					return args["{count}"]
-                end,
-				120) --the '120' here means check every 2 minutes.
 
 --------------------------------------------------------------------------------
 -- Create a wibox for each screen and add it
@@ -318,10 +318,12 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-	--right_layout:add(separator)
-	--right_layout:add(mygmail)
 	right_layout:add(separator)
-	right_layout:add(cpuwidget)
+	right_layout:add(memlabel)
+	right_layout:add(mem_graph)
+	right_layout:add(separator)
+	right_layout:add(cpulabel)
+	right_layout:add(cpu_graph)
 	right_layout:add(separator)
 	right_layout:add(kbdcfg.widget)
 	right_layout:add(separator)
