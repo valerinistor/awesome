@@ -108,7 +108,6 @@ myawesomemenu = {
 }
 
 mycommons = {
-	{ "Steam", "steam", 				icons_path .. "steam.png"},
 	{ "Terminal", "terminator", 		icons_path .. "terminal.png"},
 	{ "Pidgin IM", "pidgin", 			icons_path .. "pidgin.png"},
 	{ "Skype", "skype", 				icons_path .. "skype.png"},
@@ -135,7 +134,6 @@ internet = {
 }
 
 code = {
-	{"NetBeans", "netbeans_start",          icons_path .. "netbeans.png"},
 	{"Eclipse", "/opt/eclipse/eclipse",		icons_path .. "eclipse.png"},
 --	{"Oracle SQL Developer", "oracle-sqldeveloper", icons_path .. "sqldeveloper.png"},
 	{"QtCreator", "qtcreator", 			icons_path .. "qtcreator.png"},
@@ -166,14 +164,14 @@ media = {
 
 
 mymainmenu = awful.menu({
-	items = {
+	  items = {
 		{ "awesome", 		myawesomemenu, icons_path .. "archlinux.png"},
 		{ "internet", 		internet, icons_path .. "internet.png" },
 		{ "common", 		mycommons, icons_path .. "common.png"},
 		{ "code",			code, icons_path .. "code.png"},
 		{ "tools", 			tools, icons_path .. "settings.png"},
 		{ "media", 			media, icons_path .. "media.png"},
-		{ "file manager", 	"nautilus", icons_path .. "nautilus.png"},
+		{ "file manager", 	"nemo", icons_path .. "file-manager.png"},
 		{ "editor", 		"gedit", icons_path .. "gedit.png"}
 	}
 })
