@@ -348,6 +348,14 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ modkey  }, "s", function ()
+        awful.prompt.run({ prompt = "Web search: " }, mypromptbox[mouse.screen].widget,
+            function (command)
+                awful.util.spawn("google-chrome 'https://www.google.com/#q="..command.."'", false)
+                -- Switch to the web tag, where Firefox is, in this case tag 3
+                if tags[mouse.screen][3] then awful.tag.viewonly(tags[mouse.screen][3]) end
+            end)
+    end),
     awful.key({ "Mod1",           }, "Tab",
         function ()
             awful.client.focus.byidx( 1)
