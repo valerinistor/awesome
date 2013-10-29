@@ -39,9 +39,11 @@ end
 -- }}}
 
 -- {{{ Variable definitions
+confdir = awful.util.getdir("config")
+icons_path = confdir .. "/menu-icons/"
+
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/blackie/.config/awesome/themes/intrntbrn/theme.lua")
---beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(confdir .. "/themes/intrntbrn/theme.lua")
 
 
 -- Start applications
@@ -96,7 +98,6 @@ end
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
-icons_path = "/home/blackie/.config/awesome/menu-icons/"
 
 myawesomemenu = {
    	{ "restart wm", 					awesome.restart, icons_path .. "awesome.png"},
