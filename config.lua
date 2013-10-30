@@ -136,11 +136,12 @@ internet = {
 
 code = {
 	{"Eclipse", "/opt/eclipse/eclipse",		icons_path .. "eclipse.png"},
---	{"Oracle SQL Developer", "oracle-sqldeveloper", icons_path .. "sqldeveloper.png"},
-	{"QtCreator", "qtcreator", 			icons_path .. "qtcreator.png"},
-	{"Anjuta", "anjuta", 				icons_path .. "anjuta.png"},
-	{"GitG", "gitg", 					icons_path .. "git.png"},
-	{"GDB Nemiver", "nemiver", 			icons_path .. "nemiver.png"},
+	{"PostgreSQL Admin", "pgadmin3",		icons_path .. "postgresql.jpg"},
+	{"Oracle SQL Developer", "oracle-sqldeveloper", icons_path .. "sqldeveloper.png"},
+	{"QtCreator", "qtcreator", 				icons_path .. "qtcreator.png"},
+	{"Anjuta", "anjuta", 					icons_path .. "anjuta.png"},
+	{"GitG", "gitg", 						icons_path .. "git.png"},
+	{"GDB Nemiver", "nemiver", 				icons_path .. "nemiver.png"},
 }
 
 tools = {
