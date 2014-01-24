@@ -135,7 +135,7 @@ internet = {
 
 code = {
     {"Eclipse", "/opt/eclipse/eclipse", icons_path .. "eclipse.png"},
-    {"PostgreSQL Admin", "pgadmin3"},
+    {"PostgreSQL Admin", "pgadmin3",    icons_path .. "postgresql.jpg"},
     {"Jasper-ETL","/opt/jasper-etl/JETLXCmmty-linux-gtk-x86_64"},
 --    {"Oracle SQL Developer", "oracle-sqldeveloper", icons_path .. "sqldeveloper.png"},
     {"QtCreator", "qtcreator",          icons_path .. "qtcreator.png"},
