@@ -123,10 +123,7 @@ internet = {
     {"Chrome", "google-chrome",         icons_path .. "google-chrome.png"},
     {"Firefox", "firefox",              icons_path .. "firefox.png" },
     {"XChat", "xchat",                  icons_path .. "xchat.png"},
-    {"Thunderbird", "thunderbird",      icons_path .. "thunderbird.png"},
-    {"Evolution", "evolution",          icons_path .. "evolution.png"},
     {"TeamViewer", "teamviewer7",       icons_path .. "teamviewer.png"},
-    {"Linux DC++", "linuxdcpp",         icons_path .. "linuxdcpp.png"},
     {"QBittorrent", "qbittorrent",      icons_path .. "qbittorrent.png"},
     {"FileZilla", "filezilla",          icons_path .. "filezilla.png"},
     {"Wireshark", "gksu wireshark",     icons_path .. "wireshark.png"},
@@ -135,8 +132,8 @@ internet = {
 
 code = {
     {"Eclipse", "/opt/eclipse/eclipse", icons_path .. "eclipse.png"},
-    {"PostgreSQL Admin", "pgadmin3",    icons_path .. "postgresql.jpg"},
-    {"Jasper-ETL","/opt/jasper-etl/JETLXCmmty-linux-gtk-x86_64"},
+    {"PostgreSQL Admin", "pgadmin3",    icons_path .. "postgresql.png"},
+    {"Jasper-ETL","/opt/jasper-etl/JETLXCmmty-linux-gtk-x86_64", icons_path .. "jasper-etl.png"},
 --    {"Oracle SQL Developer", "oracle-sqldeveloper", icons_path .. "sqldeveloper.png"},
     {"QtCreator", "qtcreator",          icons_path .. "qtcreator.png"},
     {"Anjuta", "anjuta",                icons_path .. "anjuta.png"},
@@ -156,7 +153,6 @@ tools = {
 
 media = {
     {"Vlc Player", "vlc",               icons_path .. "vlc.png"},
-    {"Banshee", "banshee",              icons_path .. "banshee.png"},
     {"Clementine", "clementine",        icons_path .. "clementine.png"},
     {"iPod", "gtkpod",                  icons_path .. "ipod.png"},
     {"Audacity", "audacity",            icons_path .. "audacity.png"},
@@ -166,7 +162,7 @@ media = {
 
 
 mymainmenu = awful.menu({
-      items = {
+    items = {
         { "awesome", myawesomemenu,     icons_path .. "archlinux.png"},
         { "internet", internet,         icons_path .. "internet.png" },
         { "common", mycommons,          icons_path .. "common.png"},
