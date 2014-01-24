@@ -27,15 +27,15 @@ wallpaper4    = sharedthemes .. "/default/background.png"
 wpscript      = home .. "/.wallpaper"
 
 if awful.util.file_readable(wallpaper1) then
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper1 }
+    theme.wallpaper_cmd = { "awsetbg " .. wallpaper1 }
 elseif awful.util.file_readable(wallpaper2) then
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper2 }
+    theme.wallpaper_cmd = { "awsetbg " .. wallpaper2 }
 elseif awful.util.file_readable(wpscript) then
-	theme.wallpaper_cmd = { "sh " .. wpscript }
+    theme.wallpaper_cmd = { "sh " .. wpscript }
 elseif awful.util.file_readable(wallpaper3) then
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper3 }
+    theme.wallpaper_cmd = { "awsetbg " .. wallpaper3 }
 else
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper4 }
+    theme.wallpaper_cmd = { "awsetbg " .. wallpaper4 }
 end
 
 if awful.util.file_readable(config .. "/vain/init.lua") then
@@ -59,7 +59,7 @@ theme.bg_urgent = theme.bg_normal
 -- {{{ Borders
 theme.border_width  = 1
 theme.border_focus  = "#EE6363"
-theme.border_normal = theme.bg_normal 
+theme.border_normal = theme.bg_normal
 theme.border_marked = "#622323"
 -- }}}
 
@@ -76,7 +76,7 @@ theme.fg_end_widget    = "#CC0000" -- high
 theme.fg_off_widget    = theme.bg_normal -- bg
 theme.fg_netup_widget  = "#9ACD32"
 theme.fg_netdn_widget  = theme.border_focus
-theme.bg_widget        = theme.bg_urgent 
+theme.bg_widget        = theme.bg_urgent
 theme.border_widget    = theme.bg_urgent
 -- }}}
 

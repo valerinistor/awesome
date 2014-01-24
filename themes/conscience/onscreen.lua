@@ -21,28 +21,28 @@ function onscreen.init_logwatcher()
    w = infojets.logwatcher.new()
    w:add_log_directory('/home/unlogic', { { file = '.xsession-errors',
                                             mask = "(.+)" } })
-   w:add_log_directory('/var/log', { 
-                          { file = 'auth.log', 
+   w:add_log_directory('/var/log', {
+                          { file = 'auth.log',
                             mask = ".+ (%d%d:%d%d:%d%d )%w+ (.+)",
-                            ignore = { "crond:session" } 
+                            ignore = { "crond:session" }
                          },
-                          { file = 'user.log', 
-                            mask = ".+ (%d%d:%d%d:%d%d )%w+ (.+)" 
+                          { file = 'user.log',
+                            mask = ".+ (%d%d:%d%d:%d%d )%w+ (.+)"
                          },
-                          { file = 'errors.log', 
+                          { file = 'errors.log',
                             mask = ".+ (%d%d:%d%d:%d%d )%w+ (.+)",
-                            ignore = { "dhcpcd" } 
+                            ignore = { "dhcpcd" }
                          },
                           { file = 'kernel.log',
-                            mask = ".+ (%d%d:%d%d:%d%d )%w+ (%w+: )%[%s*[%d%.]+%] (.+)" 
+                            mask = ".+ (%d%d:%d%d:%d%d )%w+ (%w+: )%[%s*[%d%.]+%] (.+)"
                          },
                           { file = 'messages.log',
                             mask = ".+ (%d%d:%d%d:%d%d )%w+ (.+)",
-                            ignore = { "\\-\\- MARK \\-\\-" } 
+                            ignore = { "\\-\\- MARK \\-\\-" }
                          },
                           { file = 'wicd/wicd.log',
-                            mask = "%d+%/%d+%/%d+ (.+)" 
-                         } 
+                            mask = "%d+%/%d+%/%d+ (.+)"
+                         }
                        })
    w.font = 'Helvetica 9'
    w.title_font = 'Helvetica 9'
@@ -81,7 +81,7 @@ function onscreen.init_calendar()
    orglendar.event_color = theme.motive
    orglendar.font = "DejaVu Sans Mono 10"
    orglendar.char_width = 9
-   
+
    local cal_box_height = 120
    local cal_box = infojets.create_wibox({ width = 180, height = cal_box_height,
                                            x = -20, y = 30, bg_color = theme.bg_onscreen })
@@ -91,9 +91,9 @@ function onscreen.init_calendar()
    cal_tb:set_valign("top")
    cal_layout:set_right(cal_tb)
    cal_box:set_widget(cal_layout)
-   
+
    local todo_box = infojets.create_wibox({ width = 300, height = 300,
-                                            x = -20, y = 30 + cal_box_height, 
+                                            x = -20, y = 30 + cal_box_height,
                                             bg_color = theme.bg_onscreen })
    local todo_tb = wibox.widget.textbox()
    local todo_layout = wibox.layout.align.horizontal()
@@ -108,12 +108,12 @@ function onscreen.init_calendar()
          local caltext = orglendar.generate_calendar(offset).calendar
          cal_tb:set_markup(pango(caltext, { foreground = "#FFFFFF" }))
       end
-   
-   local update_todo = 
+
+   local update_todo =
       function()
          local query = os.date("%Y-%m-%d")
          local todotext, _, length = orglendar.create_string(query,motive,"DejaVu Sans Mono 10")
-         if todotext == '<span font="DejaVu Sans Mono 10"></span>' then 
+         if todotext == '<span font="DejaVu Sans Mono 10"></span>' then
             todotext = '<span font="DejaVu Sans Mono 10"> </span>'
          end
          todo_tb:set_markup(pango(todotext, { foreground = "#FFFFFF" }))
@@ -121,18 +121,18 @@ function onscreen.init_calendar()
          infojets.reposition_wibox(todo_box)
          update_calendar(0)
       end
-   
+
    cal_tb:buttons(awful.util.table.join(
                      awful.button({ }, 2,
                                   function ()
                                      offset = 0
                                      update_calendar(0)
                                   end),
-                     awful.button({ }, 4, 
+                     awful.button({ }, 4,
                                   function ()
                                      update_calendar(-1)
                                   end),
-                     awful.button({ }, 5, 
+                     awful.button({ }, 5,
                                   function ()
                                      update_calendar(1)
                                   end)))
@@ -141,15 +141,15 @@ function onscreen.init_calendar()
                                    function ()
                                       awful.util.spawn(editor .. " " .. orglendar.files[1])
                                    end),
-                      awful.button({ }, 4, 
+                      awful.button({ }, 4,
                                    function ()
                                       update_calendar(-1)
                                    end),
-                      awful.button({ }, 5, 
+                      awful.button({ }, 5,
                                    function ()
                                       update_calendar(1)
                                    end),
-                      awful.button({ }, 3, 
+                      awful.button({ }, 3,
                                    function ()
                                       update_todo()
                                    end)))
@@ -161,12 +161,12 @@ function onscreen.init_jetclock()
    local scrwidth = 1280 -- For current display
    local radius = 150
    local wb = infojets.create_wibox({ width = radius * 2, height = radius * 2 + 100,
-                                      x = scrwidth / 2 - radius, y = 50, 
+                                      x = scrwidth / 2 - radius, y = 50,
                                       bg_color = theme.bg_onscreen })
    w = infojets.jetclock.new()
    w:set_radius(radius)
    remind = function(...) w:remind(...) end
-   
+
    w:run()
    wb:set_widget(w.widget)
 end

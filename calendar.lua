@@ -64,7 +64,7 @@ function switchNaughtyMonth(switchMonths)
         if (#calendar < 3) then return end
         local swMonths = switchMonths or 1
         calendar[1] = calendar[1] + swMonths
-		if calendar[3].box.widgets == nil then  calendar[3].box.wigets = wibox.widget.textbox end
+        if calendar[3].box.widgets == nil then  calendar[3].box.wigets = wibox.widget.textbox end
         calendar[3].box.widgets[2].text = string.format('<span font_desc="%s">%s</span>', "monospace", displayMonth(calendar[1], calendar[2], 2))
 end
 

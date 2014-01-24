@@ -100,85 +100,85 @@ end
 -- Create a laucher widget and a main menu
 
 myawesomemenu = {
-   	{ "restart wm", 					awesome.restart, icons_path .. "awesome.png"},
-   	{ "quit wm", 						awesome.quit, icons_path .. "awesome.png"},
-	{ "lock", "slimlock", 				icons_path .. "lock.png"},
-	{ "log out", '/opt/bin/logout.sh',	icons_path .. "sleep.png"},
---	{ "reboot", "sudo shutdown -r now",	icons_path .. "restart.png"},
---	{ "shutdown", "sudo shutdown_wait",	icons_path .. "shutdown.png"}
+    { "restart wm",                     awesome.restart, icons_path .. "awesome.png"},
+    { "quit wm",                        awesome.quit, icons_path .. "awesome.png"},
+    { "lock", "slimlock",               icons_path .. "lock.png"},
+    { "log out", '/opt/bin/logout.sh',  icons_path .. "sleep.png"},
+--    { "reboot", "sudo shutdown -r now",    icons_path .. "restart.png"},
+--    { "shutdown", "sudo shutdown_wait",    icons_path .. "shutdown.png"}
 }
 
 mycommons = {
-	{ "Terminal", "terminator", 		icons_path .. "terminal.png"},
-	{ "Pidgin IM", "pidgin", 			icons_path .. "pidgin.png"},
-	{ "Skype", "skype", 				icons_path .. "skype.png"},
-	{ "LibreOffice", "libreoffice",		icons_path .. "office.png"},
-	{ "Graphic GIMP", "gimp", 			icons_path .. "gimp.png"},
-	{ "Appearance", "lxappearance", 	icons_path .. "lxappearance.png"},
-	{ "Bluetooth", "blueman-manager", 	icons_path .. "bluetooth.png"},
-	{ "Calculator", "gnome-calculator",	icons_path .. "gnome-calculator.png"}
+    { "Terminal", "terminator",         icons_path .. "terminal.png"},
+    { "Pidgin IM", "pidgin",            icons_path .. "pidgin.png"},
+    { "Skype", "skype",                 icons_path .. "skype.png"},
+    { "LibreOffice", "libreoffice",     icons_path .. "office.png"},
+    { "Graphic GIMP", "gimp",           icons_path .. "gimp.png"},
+    { "Appearance", "lxappearance",     icons_path .. "lxappearance.png"},
+    { "Bluetooth", "blueman-manager",   icons_path .. "bluetooth.png"},
+    { "Calculator", "gnome-calculator", icons_path .. "gnome-calculator.png"}
 }
 
 internet = {
-	{"Chrome", "google-chrome",		icons_path .. "google-chrome.png"},
-	{"Firefox", "firefox", 			icons_path .. "firefox.png" },
-	{"XChat", "xchat",				icons_path .. "xchat.png"},
-	{"Thunderbird", "thunderbird",	icons_path .. "thunderbird.png"},
-	{"Evolution", "evolution",		icons_path .. "evolution.png"},
-	{"TeamViewer", "teamviewer7", 	icons_path .. "teamviewer.png"},
-	{"Linux DC++", "linuxdcpp", 	icons_path .. "linuxdcpp.png"},
---	{"EiskaltDC++", "eiskaltdcpp-gtk", icons_path .. "eiskaltdcpp.png"},
-	{"QBittorrent", "qbittorrent", 	icons_path .. "qbittorrent.png"},
-	{"FileZilla", "filezilla", 		icons_path .. "filezilla.png"},
-	{"Wireshark", "gksu wireshark", icons_path .. "wireshark.png"},
-	{"Dropbox", "dropboxd",			icons_path .. "dropbox.png"}
+    {"Chrome", "google-chrome",         icons_path .. "google-chrome.png"},
+    {"Firefox", "firefox",              icons_path .. "firefox.png" },
+    {"XChat", "xchat",                  icons_path .. "xchat.png"},
+    {"Thunderbird", "thunderbird",      icons_path .. "thunderbird.png"},
+    {"Evolution", "evolution",          icons_path .. "evolution.png"},
+    {"TeamViewer", "teamviewer7",       icons_path .. "teamviewer.png"},
+    {"Linux DC++", "linuxdcpp",         icons_path .. "linuxdcpp.png"},
+    {"QBittorrent", "qbittorrent",      icons_path .. "qbittorrent.png"},
+    {"FileZilla", "filezilla",          icons_path .. "filezilla.png"},
+    {"Wireshark", "gksu wireshark",     icons_path .. "wireshark.png"},
+    {"Dropbox", "dropboxd",             icons_path .. "dropbox.png"}
 }
 
 code = {
-	{"Eclipse", "/opt/eclipse/eclipse",		icons_path .. "eclipse.png"},
---	{"Oracle SQL Developer", "oracle-sqldeveloper", icons_path .. "sqldeveloper.png"},
-	{"QtCreator", "qtcreator", 			icons_path .. "qtcreator.png"},
-	{"Anjuta", "anjuta", 				icons_path .. "anjuta.png"},
-	{"GitG", "gitg", 					icons_path .. "git.png"},
-	{"GDB Nemiver", "nemiver", 			icons_path .. "nemiver.png"},
+    {"Eclipse", "/opt/eclipse/eclipse", icons_path .. "eclipse.png"},
+    {"PostgreSQL Admin", "pgadmin3"},
+    {"Jasper-ETL","/opt/jasper-etl/JETLXCmmty-linux-gtk-x86_64"},
+--    {"Oracle SQL Developer", "oracle-sqldeveloper", icons_path .. "sqldeveloper.png"},
+    {"QtCreator", "qtcreator",          icons_path .. "qtcreator.png"},
+    {"Anjuta", "anjuta",                icons_path .. "anjuta.png"},
+    {"GitG", "gitg",                    icons_path .. "git.png"},
+    {"GDB Nemiver", "nemiver",          icons_path .. "nemiver.png"},
 }
 
 tools = {
-	{"VMPlayer", "vmplayer",			icons_path .. "vmware-player.png"},
-	{"GConf", "gconf-editor", 			icons_path .. "gconf-editor.png"},
-	{"Disk Usage", "baobab", 			icons_path .. "baobab.png"},
-	{"Disk Utility", "gnome-disks", 	icons_path .. "palimpsest.png"},
-	{"GParted", "gksu gparted",			icons_path .. "gparted.png"},
-	{"Monitor", "gnome-system-monitor",	icons_path .. "system-monitor.png"},
-	{"Htop", terminal .. " -e htop", 	icons_path .. "htop.png"}
+    {"VMPlayer", "vmplayer",            icons_path .. "vmware-player.png"},
+    {"GConf", "gconf-editor",           icons_path .. "gconf-editor.png"},
+    {"Disk Usage", "baobab",            icons_path .. "baobab.png"},
+    {"Disk Utility", "gnome-disks",     icons_path .. "palimpsest.png"},
+    {"GParted", "gksu gparted",         icons_path .. "gparted.png"},
+    {"Monitor", "gnome-system-monitor", icons_path .. "system-monitor.png"},
+    {"Htop", terminal .. " -e htop",    icons_path .. "htop.png"}
 }
 
 media = {
-	{"Vlc Player", "vlc", 			icons_path .. "vlc.png"},
-	{"Banshee", "banshee", 			icons_path .. "banshee.png"},
-	{"Clementine", "clementine",	icons_path .. "clementine.png"},
-	{"iPod", "gtkpod",				icons_path .. "ipod.png"},
-	{"Audacity", "audacity",		icons_path .. "audacity.png"},
-	{"Pulse Audio", "pavucontrol",	icons_path .. "pulseaudio.png"}
+    {"Vlc Player", "vlc",               icons_path .. "vlc.png"},
+    {"Banshee", "banshee",              icons_path .. "banshee.png"},
+    {"Clementine", "clementine",        icons_path .. "clementine.png"},
+    {"iPod", "gtkpod",                  icons_path .. "ipod.png"},
+    {"Audacity", "audacity",            icons_path .. "audacity.png"},
+    {"Pulse Audio", "pavucontrol",      icons_path .. "pulseaudio.png"}
 }
 
 
 
 mymainmenu = awful.menu({
-	  items = {
-		{ "awesome", 		myawesomemenu, icons_path .. "archlinux.png"},
-		{ "internet", 		internet, icons_path .. "internet.png" },
-		{ "common", 		mycommons, icons_path .. "common.png"},
-		{ "code",			code, icons_path .. "code.png"},
-		{ "tools", 			tools, icons_path .. "settings.png"},
-		{ "media", 			media, icons_path .. "media.png"},
-		{ "file manager", 	"nemo", icons_path .. "file-manager.png"},
-		{ "editor", 		"gedit", icons_path .. "gedit.png"}
-	}
+      items = {
+        { "awesome", myawesomemenu,     icons_path .. "archlinux.png"},
+        { "internet", internet,         icons_path .. "internet.png" },
+        { "common", mycommons,          icons_path .. "common.png"},
+        { "code", code,                 icons_path .. "code.png"},
+        { "tools", tools,               icons_path .. "settings.png"},
+        { "media", media,               icons_path .. "media.png"},
+        { "file manager", "nemo",       icons_path .. "file-manager.png"},
+        { "editor", "gedit",            icons_path .. "gedit.png"}
+    }
 })
 
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon, menu = mymainmenu })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -194,24 +194,26 @@ separator:set_text(" | ")
 cpulabel = wibox.widget.textbox()
 cpulabel:set_text("cpu")
 
-cpu_graph = blingbling.line_graph({ height = 18,
-                                        width = 100,
-                                        show_text = true,
-                                        label = "$percent %",
-                                        rounded_size = 0.3,
-                                        graph_background_color = "#00000033"
-                                      })
-vicious.register(cpu_graph, vicious.widgets.cpu, '$1', 4)
+cpu_graph = blingbling.line_graph({
+    height = 18,
+    width = 100,
+    show_text = true,
+    label = "$percent %",
+    rounded_size = 0.3,
+    graph_background_color = "#00000033"
+})
 
+vicious.register(cpu_graph, vicious.widgets.cpu, '$1', 4)
 memlabel = wibox.widget.textbox()
 memlabel:set_text("mem")
-mem_graph = blingbling.line_graph({ height = 18,
-                                        width = 80,
-                                        show_text = true,
-                                        label = "$percent %",
-                                        rounded_size = 0.3,
-                                        graph_background_color = "#00000033"
-                                      })
+mem_graph = blingbling.line_graph({
+    height = 18,
+    width = 80,
+    show_text = true,
+    label = "$percent %",
+    rounded_size = 0.3,
+    graph_background_color = "#00000033"
+})
 vicious.register(mem_graph, vicious.widgets.mem,'$1')
 
 --------------------------------------------------------------------------------
@@ -317,16 +319,16 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-	right_layout:add(separator)
-	right_layout:add(memlabel)
-	right_layout:add(mem_graph)
-	right_layout:add(separator)
-	right_layout:add(cpulabel)
-	right_layout:add(cpu_graph)
-	right_layout:add(separator)
-	right_layout:add(kbdcfg.widget)
-	right_layout:add(separator)
-	right_layout:add(mytextclock)
+    right_layout:add(separator)
+    right_layout:add(memlabel)
+    right_layout:add(mem_graph)
+    right_layout:add(separator)
+    right_layout:add(cpulabel)
+    right_layout:add(cpu_graph)
+    right_layout:add(separator)
+    right_layout:add(kbdcfg.widget)
+    right_layout:add(separator)
+    right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -362,9 +364,9 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx( 1)
             if client.focus then client.focus:raise() end
         end), -- alt - Tab - switch between windows
-	awful.key({ }, "XF86Display", function () awful.util.spawn("bash /opt/bin/projector.sh") end ),
-	awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'") end),
-	awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle") end),
+    awful.key({ }, "XF86Display", function () awful.util.spawn("bash /opt/bin/projector.sh", false) end ),
+    awful.key({ }, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'", false) end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle", false) end),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
@@ -396,8 +398,8 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
-	awful.key({ modkey, "Control" }, "l", 	   function () awful.util.spawn("slimlock") end),
+    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal, false) end),
+    awful.key({ modkey, "Control" }, "l",        function () awful.util.spawn("slimlock", false) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
@@ -427,7 +429,7 @@ globalkeys = awful.util.table.join(
 )
 
 clientkeys = awful.util.table.join(
-	awful.key({ "Mod1",			  }, "F4",     function (c) c:kill()                         end), -- alt - f4 close window
+    awful.key({ "Mod1",              }, "F4",     function (c) c:kill()                         end), -- alt - f4 close window
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     --awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
@@ -442,14 +444,14 @@ clientkeys = awful.util.table.join(
         end),
     awful.key({ modkey, "Control" }, "m",
         function (c)
-			maximized = c.maximized_horizontal and c.maximized_vertical
+            maximized = c.maximized_horizontal and c.maximized_vertical
             c.maximized_horizontal = not maximized
             c.maximized_vertical   = not maximized
         end),
-	awful.key({modkey,            }, "m",
-		function (c)
-			c.maximized_vertical = not c.maximized_vertical
-		end)
+    awful.key({modkey,            }, "m",
+        function (c)
+            c.maximized_vertical = not c.maximized_vertical
+        end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
@@ -516,11 +518,11 @@ awful.rules.rules = {
     { rule = { class = "gimp" },
       properties = { floating = true } },
     { rule = { class = "Google-chrome" },
-	  properties = { tag = tags[1][2] } },
+      properties = { tag = tags[1][2] } },
     { rule = { class = "Eclipse" },
-	  properties = { tag = tags[1][1] } },
+      properties = { tag = tags[1][1] } },
     { rule = { class = "Skype" },
-	  properties = { tag = tags[1][4] } }
+      properties = { tag = tags[1][4] } }
 }
 -- }}}
 

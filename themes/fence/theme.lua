@@ -27,15 +27,15 @@ wallpaper4    = sharedthemes .. "/default/background.png"
 wpscript      = home .. "/.wallpaper"
 
 if awful.util.file_readable(wallpaper1) then
-	theme.wallpaper_cmd = { "awsetbg " .. "/home/blackie/Pictures/earth_lights.png" }
+    theme.wallpaper_cmd = { "awsetbg " .. "/home/blackie/Pictures/earth_lights.png" }
 elseif awful.util.file_readable(wallpaper2) then
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper2 }
+    theme.wallpaper_cmd = { "awsetbg " .. wallpaper2 }
 elseif awful.util.file_readable(wpscript) then
-	theme.wallpaper_cmd = { "sh " .. wpscript }
+    theme.wallpaper_cmd = { "sh " .. wpscript }
 elseif awful.util.file_readable(wallpaper3) then
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper3 }
+    theme.wallpaper_cmd = { "awsetbg " .. wallpaper3 }
 else
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper4 }
+    theme.wallpaper_cmd = { "awsetbg " .. wallpaper4 }
 end
 
 if awful.util.file_readable(config .. "/vain/init.lua") then

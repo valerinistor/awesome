@@ -213,10 +213,10 @@ awful.screen.padding( screen[s], {top = 0} )
         {
             mytaglist[s], spacer, mpdwidget, spacer,
            -- mytaglist[s], spacer,
-	    mypromptbox[s],
+        mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
-        
+
          s == 1 and mysystray or nil, mytextclock,
         seperator, spacer, cpuwidget, spacer, cpuicon, spacer, seperator, upicon, netwidget, dnicon, seperator, spacer,  wifiwidget, spacer, seperator, spacer,
         batwidget, baticon,
@@ -251,7 +251,7 @@ globalkeys = awful.util.table.join(
         end),
     awful.key({ modkey,           }, "w", function () mymainmenu:show({keygrabber=true}) end),
 
-    --Volume manipulation  
+    --Volume manipulation
      awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 5+") end),
      awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 5-") end),
 
@@ -365,7 +365,7 @@ awful.rules.rules = {
     { rule = { },
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
-		     size_hints_honor = false,
+             size_hints_honor = false,
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
