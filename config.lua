@@ -216,7 +216,7 @@ vicious.register(mem_graph, vicious.widgets.mem,'$1')
 -- Keyboard map indicator and changer
 kbdcfg = {}
 kbdcfg.cmd = "setxkbmap"
-kbdcfg.layout = { { "us", "" }, { "ro", "" }, { "ru", "" } }
+kbdcfg.layout = { { "us", "" }, { "ro", "-variant std" }, { "ru", "" } }
 kbdcfg.current = 1  -- us is our default layout
 kbdcfg.widget = wibox.widget.textbox()
 kbdcfg.widget:set_text(" " .. kbdcfg.layout[kbdcfg.current][1] .. " ")
