@@ -16,10 +16,12 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local vicious = require("vicious")
 local blingbling = require("blingbling")
-local lain = require("lain")
 
 -- Multiple Screens
 local xrandr = require("xrandr")
+
+-- Calendar Module
+local calendar = require('calendar')
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -168,9 +170,7 @@ kbdcfg.widget:buttons(
 --------------------------------------------------------------------------------
 -- Create a textclock and calendar widget
 mytextclock = awful.widget.textclock()
-lain.widgets.calendar:attach(mytextclock)
--- calendar = require('calendar')
--- calendar.addCalendarToWidget(mytextclock, "<span color='red'>%s</span>")
+calendar.register(mytextclock, "<span color='red'>%s</span>")
 
 --------------------------------------------------------------------------------
 -- Create a wibox for each screen and add it
@@ -248,14 +248,16 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
+
+    right_layout:add(separator)
+    right_layout:add(memlabel)
+    right_layout:add(mem_graph)
+    right_layout:add(separator)
+    right_layout:add(cpulabel)
+    right_layout:add(cpu_graph)
+    right_layout:add(separator)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(separator)
-    -- right_layout:add(memlabel)
-    -- right_layout:add(mem_graph)
-    -- right_layout:add(separator)
-    -- right_layout:add(cpulabel)
-    -- right_layout:add(cpu_graph)
-    -- right_layout:add(separator)
     right_layout:add(kbdcfg.widget)
     right_layout:add(separator)
     right_layout:add(mytextclock)
@@ -294,7 +296,7 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(1)
             if client.focus then client.focus:raise() end
         end), -- alt - Tab - switch between windows
-    awful.key({}, "XF86Display", xrandr.xrandr(mouse, timer)),
+    awful.key({}, "XF86Display", xrandr.xrandr),
     awful.key({}, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'", false) end),
     awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle", false) end),
     awful.key({modkey,}, "Left", awful.tag.viewprev),

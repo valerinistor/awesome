@@ -1,12 +1,13 @@
 local awful = require("awful")
 local io = require("io")
 local naughty = require("naughty")
-local pairs, unpack = pairs, unpack
+
+local pairs, unpack, mouse, timer = pairs, unpack, mouse, timer
 
 module("xrandr")
 
 -- Get active outputs
-function outputs()
+local function outputs()
     local outputs = {}
     local xrandr = io.popen("xrandr -q")
     if xrandr then
@@ -22,7 +23,7 @@ function outputs()
     return outputs
 end
 
-function arrange(out)
+local function arrange(out)
     -- We need to enumerate all the way to combinate output. We assume
     -- we want only an horizontal layout.
     local choices = {}
@@ -48,7 +49,7 @@ function arrange(out)
 end
 
 -- Build available choices
-function menu()
+local function menu()
     local menu = {}
     local out = outputs()
     local choices = arrange(out)
@@ -92,7 +93,7 @@ local state = {
     cid = nil
 }
 
-function xrandr(mouse, timer)
+function xrandr()
     -- Stop any previous timer
     if state.timer then
         state.timer:stop()
