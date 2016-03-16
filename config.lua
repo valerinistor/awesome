@@ -17,6 +17,9 @@ local menubar = require("menubar")
 local vicious = require("vicious")
 local blingbling = require("blingbling")
 
+-- Window switcher
+require("cheeky")
+
 -- Multiple Screens
 local xrandr = require("xrandr")
 
@@ -299,6 +302,7 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86Display", xrandr.xrandr),
     awful.key({}, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/screenshots/ 2>/dev/null'", false) end),
     awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer sset Master toggle", false) end),
+    awful.key({modkey}, "/", function() cheeky.util.switcher() end),
     awful.key({modkey,}, "Left", awful.tag.viewprev),
     awful.key({modkey,}, "Right", awful.tag.viewnext),
     awful.key({modkey,}, "Escape", awful.tag.history.restore),

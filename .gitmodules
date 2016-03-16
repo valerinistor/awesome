@@ -4,3 +4,6 @@
 [submodule "awesome-copycats"]
 	path = awesome-copycats
 	url = https://github.com/copycat-killer/awesome-copycats.git
+[submodule "cheeky"]
+	path = cheeky
+	url = https://github.com/svexican/cheeky
